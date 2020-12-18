@@ -16,7 +16,7 @@ namespace StefansYTDemoWeb.Data
         {
             _context.Database.Migrate();
 
-            if (_context.Teams.Any(p => p.Name == "Tre Kronor"))
+            if (!_context.Teams.Any(p => p.Name == "Tre Kronor"))
             {
                 _context.Teams.Add(new Team { Name = "Tre Kronor"});
                 _context.SaveChanges();
